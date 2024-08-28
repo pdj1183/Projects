@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    position: absolute;
+    font-size:7rem;
+    align-self: center;
+    filter: invert(1);
+    mix-blend-mode: difference;
+    color: #001979;
+    z-index: 1;
+}

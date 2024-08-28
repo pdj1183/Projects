@@ -1,0 +1,30 @@
+.navbar{
+    top: 0;
+    position: sticky;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  color: white;
+  background: black;
+  width: 100vw;
+  height: 7vh;
+  padding: 50px;
+}
+
+.nav:hover, .active {
+    /*color: #86b0ff;*/
+
+    color: #ffe686;
+}
+
+.nav, .Image{
+    margin: 0 15px 0 15px;
+    font-size: 2em;
+    
+}
+
+
+
