@@ -12,8 +12,25 @@ function get_repo_root_dir {
 
 get_repo_root_dir $0;
 
-source ${REPO_ROOT}/nextjs-e-commerce/venv/bin/activate;
+
+if [[ ! -d "${REPO_ROOT}/nextjs-e-commerce/node_modules" ]]; then
+      npm install --prefix ${REPO_ROOT}/nextjs-e-commerce
+      check_error $?
+    fi
+
+
+if [ ! -d ${REPO_ROOT}/nextjs-e-commerce/venv ]; then
+  python3.10 -m venv ${REPO_ROOT}/nextjs-e-commerce/venv
+  echo "Python venv created!"
+  source ${REPO_ROOT}/nextjs-e-commerce/venv/bin/activate;
+else
+  source ${REPO_ROOT}/nextjs-e-commerce/venv/bin/activate;
+fi
+
+
 flask --app api init-db
 npm run dev;
+
+
 
 
