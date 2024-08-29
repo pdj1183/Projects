@@ -1,13 +1,18 @@
 # NextJS E-Commerce Shop
+
 ### Motivation
 Create an efficient Photography Shop webpage using NextJS and Python Flask starting from scratch.
+
 ### Technologies
 Client: NextJS
+
 Server: Python Flask
+
 Database: SQLite
 
 ### Requirements
 Node >=18
+
 Python 3.10 
 
 ### Running
