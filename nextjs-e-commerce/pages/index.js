@@ -6,7 +6,6 @@ import Header from "../components/header";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Post from "../components/post";
-import List from "../components/list";
 import { loadPosts } from '../lib/load-posts'
 
 export default function Home({ posts }) {
