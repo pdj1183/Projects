@@ -1,0 +1,19 @@
+.postBox {
+    width: 30vw;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.postBox * {
+    top: 0;
+    margin: 5vh 5vw;
+}
+
+.postImage {
+    object-fit: contain;
+    display: block; 
+}

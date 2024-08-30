@@ -7,7 +7,7 @@ export default function Header() {
     return (
         <section className={styles.header}>
 
-            <Image src={headerImage} alt='Header' sizes='100vw' placeholder="blur"/>
+            <Image className={styles.headerImage} src={headerImage} alt='Header'  placeholder="blur"/>
             <h1 className={styles.title} >
                 I Take Pics Outside
             </h1>

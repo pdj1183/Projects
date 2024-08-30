@@ -14,6 +14,11 @@ CREATE TABLE user (
   password TEXT NOT NULL
 );
 
-insert into post values(1, 'wow!', '11', '/GreyRockHeader.jpg');
-insert into post values(2, 'test', '2', './');
-insert into post values(3, 'bob!', 'test', '/tatatat/');
+insert into post values(1, 'Pier!', 'Huntington Beach Peir at Sunset!', '/images/Post-1.jpg');
+insert into post values(2, 'Trailblazer', 'Walking into the sunlight!', '/images/Post-2.jpg');
+insert into post values(3, 'The Path Not Taken', 'Follow your own path!', '/images/Post-3.jpg');
+insert into post values(4, 'Sun', 'test', '/images/Post-4.jpg');
+insert into post values(5, 'Lifeguard', 'test', '/images/Post-5.jpg');
+insert into post values(6, 'Blast', 'test', '/images/Post-6.jpg');
+insert into post values(7, 'Pleasent Watch', 'test', '/images/Post-7.jpg');
+insert into post values(8, 'Beach Day', 'test', '/images/Post-8.jpg');
