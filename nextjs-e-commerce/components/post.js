@@ -6,15 +6,19 @@ export default function Post(post) {
     console.log(pathname)
     return (
         <section className={styles.postBox}>
-            <h1>{post.title}</h1>
+            <h1 className={styles.title}>{post.title}</h1>
 
-            <br/>
 
-            <Image className={styles.postImage} src={pathname} alt='test' fill={true}/>
+            <Image 
+                className={styles.postImage} 
+                src={pathname} 
+                alt='test' 
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
+                fill={true}
+            />
 
-            <br/>
 
-            <h2>{post.description}</h2>
+            <h2 className={styles.description}>{post.description}</h2>
 
 
         </section>
