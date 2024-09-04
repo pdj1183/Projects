@@ -6,7 +6,7 @@
 
 @media(max-width: 800px) {
     .title {
-        font-size: 2rem;
+        font-size: 2rem !important;
     }
 }
 
