@@ -1,6 +1,7 @@
 .navbar{
     top: 0;
     position: sticky;
+    z-index: 12 !important;
 }
 .header {
   display: flex;
