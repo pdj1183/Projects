@@ -1,13 +1,13 @@
 import os
 from flask import Flask
-from flask_restful import Resource, Api
+from flask_restx import Resource, Api
 
 
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
-            SECRET_KEY='dev',
+            SECRET_KEY='MY-big-SECRET',
             DATABASE=os.path.join(app.instance_path, 'api.sqlite'),
     )
 
@@ -27,9 +27,11 @@ def create_app(test_config=None):
 
     from . import db
     db.init_app(app)
+
     
     api = Api(app)
-    from . import post
-    api.add_resource(post.get_posts, '/api/posts')
+    from . import posts, auth
+    api.add_resource(posts.posts, '/api/posts')
+    api.add_resource(auth.signup, '/api/signup')
 
     return app
