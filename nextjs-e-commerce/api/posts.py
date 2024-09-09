@@ -1,12 +1,8 @@
-from flask import (
-    Blueprint, flash, g, json, redirect, render_template, request, url_for
-)
-from flask_restful import Resource, Api
-
+from flask_restx import Resource
 from api.db import get_db
 
 
-class get_posts(Resource):
+class posts(Resource):
     def get(self):
 
         db = get_db()

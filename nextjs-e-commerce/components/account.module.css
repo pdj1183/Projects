@@ -1,3 +1,36 @@
-.icon{
+.account{
     margin-left: auto;
+    position: static;
+
+    height: 100%;
+    align-items: center;
 }
+
+.account:hover{
+    .dropdown {
+        display: flex !important;
+
+    }
+}
+
+.icon {
+
+
+}
+
+.dropdown {
+    display: none; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    transition: 0.32s ease-in-out;
+    background: darkgray;
+    border-radius: 10px;
+    transform: translateX(-20px);
+    height: 20vh;
+    width: 10vw;
+
+}
+
+
