@@ -33,5 +33,6 @@ def create_app(test_config=None):
     from . import posts, auth
     api.add_resource(posts.posts, '/api/posts')
     api.add_resource(auth.signup, '/api/signup')
+    api.add_resource(auth.login, '/api/login')
 
     return app
