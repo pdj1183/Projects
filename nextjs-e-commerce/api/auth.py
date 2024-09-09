@@ -1,6 +1,5 @@
-from flask import Blueprint, jsonify, redirect, url_for, request, abort
-from flask_restx import Resource, api, reqparse
-import jsonschema 
+from flask import abort
+from flask_restx import Resource, reqparse
 
 from api.db import get_db
 
@@ -69,7 +68,6 @@ class signup(Resource):
 
         return 'ok' 
 
-# @auth.route('/logout')
 class logout:
     def post(self):
         return 'Logout'
