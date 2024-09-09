@@ -1,9 +1,6 @@
-import { cache, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
-import axios from "axios";
-import styles from "../styles/login.module.css";
-import { resolve } from "styled-jsx/css";
-import { redirect } from "next/dist/server/api-utils";
+
 
 export default function Signup(props) {
     const router = useRouter();
