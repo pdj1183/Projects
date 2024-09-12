@@ -1,31 +1,36 @@
-.navbar{
+.navbar {
     top: 0;
     position: sticky;
     z-index: 12 !important;
+    background: white;
+    height: 70px !important;
 }
+
 .header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  color: white;
-  background: black;
-  width: 100vw;
-  height: 7vh;
-  padding: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    height: 70px !important;
+    width: 100vw;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.nav:hover, .active {
-    /*color: #86b0ff;*/
-
-    color: #ffe686;
+.nav:hover {
+    color: #000000b3;
 }
 
-.nav, .Image{
+.active {
+    color: #000000e6 !important;
+}
+
+.nav,
+.Image {
+    color: #0000008c;
     margin: 0 15px 0 15px;
-    font-size: 2em;
-    
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: .8px;
 }
-
-
-

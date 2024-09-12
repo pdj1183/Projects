@@ -12,13 +12,14 @@ export default function Home({ posts }) {
     console.log(posts)
 
 
+    let headerImage = {path: "/images/HomeHeader.jpg"};
     return (
         <Layout>
         <Head>
         <title>Phill's Pics</title>
         <link rel="icon" href="/favicon.ico" />
         </Head>
-        <Header />
+        <Header {...headerImage}/>
         <section className={styles.list}>
         { posts?.map((post) => (
             <Post key={post.id} {...post} />

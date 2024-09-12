@@ -1,36 +1,34 @@
-.account{
-    margin-left: auto;
-    position: static;
+.account {
 
-    height: 100%;
-    align-items: center;
+
+    margin-left: auto;
+    transform: translateY(50%) !important;
 }
 
-.account:hover{
+.account:hover {
     .dropdown {
         display: flex !important;
-
     }
 }
 
 .icon {
-
-
+    transform: translateY(-50%) !important;
 }
 
 .dropdown {
-    display: none; 
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     position: absolute;
     transition: 0.32s ease-in-out;
-    background: darkgray;
+    background: #fffffffa;
     border-radius: 10px;
-    transform: translateX(-20px);
-    height: 20vh;
-    width: 10vw;
-
+    transform: translate(-2em, 0);
 }
 
-
+.dropdown * {
+    padding: 7px 20px;
+    font-size: 1rem;
+    color: black;
+}
