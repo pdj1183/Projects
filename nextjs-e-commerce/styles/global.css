@@ -1,32 +1,39 @@
+@font-face {
+    font-family: Isoveka;
+    src: url("/font/iosevka-ss04-bold.ttc");
+    font-weight: 700;
+}
+@font-face {
+    font-family: Isoveka;
+    src: url("/font/iosevka-ss04-medium.ttc");
+    font-weight: 600;
+}
+@font-face {
+    font-family: Isoveka;
+    src: url("/font/iosevka-ss04-thin.ttc");
+    font-weight: 500;
+}
+@font-face {
+    font-family: Isoveka;
+    src: url("/font/iosevka-ss04-regular.ttc");
+    font-weight: 400;
+}
+
 html,
 body {
-  padding: 0;
-  margin: 0;
-  max-width: 100vw;
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    Segoe UI,
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    Fira Sans,
-    Droid Sans,
-    Helvetica Neue,
-    sans-serif;
+    padding: 0;
+    margin: 0;
+    max-width: 100vw;
+    overflow-x: hidden;
+    font-family: "Isoveka", sans-serif !important;
+
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
-
-
-
-
