@@ -13,6 +13,7 @@
 
 .icon {
     transform: translateY(-50%) !important;
+    margin-right: 15px;
 }
 
 .dropdown {

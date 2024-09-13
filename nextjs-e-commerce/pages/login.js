@@ -26,6 +26,8 @@ export default function Login(props) {
     async function login(event) {
         event.preventDefault();
 
+        if (!filled) return;
+
         try {
             const res = await fetch("http://localhost:3000/api/login", {
                 method: "POST",

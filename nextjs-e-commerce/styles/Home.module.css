@@ -1,31 +1,53 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-
-
 
 .list {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    height: 100%;
     position: relative;
     justify-content: space-evenly;
     max-width: 100vw;
-    align-items: baseline;
-    gap: 10px 20px;  
+    align-items: center;
+    align-content: center;
+    gap: 10px 20px;
     background-image: radial-gradient(#a697dc, #dc9e97, #ffce77, #ff3c3c);
     background-size: 600% 600%;
     background-position: center;
     animation: banner-animation 200s infinite alternate;
-
+    padding-bottom: 10vh;
 }
 
 .selector {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    justify-content: space-around;
+}
 
+.active {
+    text-decoration: underline;
+    font-size: 1.7em !important;
+}
+
+.button {
+    background-color: transparent;
+    border-style: none;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 700;
+    transition: 0.15s ease-in-out;
+}
+
+.button:hover {
+    font-size: 1.7em;
+    cursor: pointer;
 }
 
 @keyframes banner-animation {
@@ -47,14 +69,17 @@
 }
 
 @media (max-width: 800px) {
-.list {
-    flex-direction: column;
+    .list {
+        flex-direction: column;
     }
 }
 .list * {
     margin: 5px 5vw 5px 5vw;
 }
 
-
-
-
+.divider {
+    background-color: white;
+    width: 80vw;
+    height: 5px;
+    border-radius: 5px;
+}
