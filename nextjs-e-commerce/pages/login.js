@@ -20,7 +20,6 @@ export default function Login(props) {
         } else {
             setFilled(true);
         }
-        console.log(filled);
     }, [loginForm]);
 
     async function login(event) {
@@ -38,7 +37,6 @@ export default function Login(props) {
             });
             console.log(res);
             if (res.ok) {
-                console.log("Logged in");
             } else {
                 console.log("Bad");
             }

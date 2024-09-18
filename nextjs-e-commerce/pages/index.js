@@ -9,8 +9,6 @@ import Post from "../components/post";
 import { loadPosts } from "../lib/load-posts";
 
 export default function Home({ posts }) {
-    console.log(posts);
-
     const [selector, setSelector] = useState("all");
 
     let headerImage = { path: "/images/HomeHeader.jpg" };

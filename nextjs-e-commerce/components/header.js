@@ -3,7 +3,6 @@ import styles from "./header.module.css";
 
 export default function Header(image) {
     let pathname = image.path;
-    console.log(pathname);
     return (
         <section className={styles.header}>
             <Image
