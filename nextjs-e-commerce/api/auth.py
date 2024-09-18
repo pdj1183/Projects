@@ -1,5 +1,9 @@
 from flask import abort
 from flask_restx import Resource, reqparse
+import jwt
+from flask import jsonify
+from datetime import datetime, timedelta
+
 
 from api.db import get_db
 
@@ -8,16 +12,16 @@ class userDAO(object):
     def get_email(self, email):
         db = get_db()
         return db.execute(
-                        'SELECT u.* FROM user u WHERE u.email = ?',
-                        [email]
-                    ).fetchone()
+                'SELECT u.* FROM user u WHERE u.email = ?',
+                [email]
+                ).fetchone()
 
     def get_username(self, username):
-         db = get_db()
-         return db.execute(
-                      'SELECT u.* FROM user u WHERE u.username = ?',
-                      [username]
-              ).fetchone()
+        db = get_db()
+        return db.execute(
+                 'SELECT u.* FROM user u WHERE u.username = ?',
+                 [username]
+                 ).fetchone()
     def create(self, data):
         db = get_db()
         db.execute(
@@ -28,15 +32,17 @@ class userDAO(object):
     def login(self, data):
         db = get_db()
         return db.execute(
-                    'SELECT u.* FROM user u WHERE u.username = ? AND u.password = ?',
-                    [data['username'], data['password']]
+                'SELECT u.* FROM user u WHERE u.username = ? AND u.password = ?',
+                [data['username'], data['password']]
                 ).fetchone()
 
 
 
-       
-        
+
+
 DAO = userDAO()
+
+SECRET_KEY='MY-big-SECRET'
 
 
 class login(Resource):
@@ -44,7 +50,12 @@ class login(Resource):
         args = parser.parse_args()
         user = DAO.login(args)
         if user:
-            return 'ok'
+            token = jwt.encode({
+                'user': args['username'],
+                'expiration': str(datetime.utcnow() + timedelta(minutes=50))
+                }, SECRET_KEY)
+
+            return jsonify({'token': token})
         return abort(400, 'Failed Login')    
 
 parser = reqparse.RequestParser()
@@ -55,7 +66,7 @@ parser.add_argument('username')
 class signup(Resource):
     def post(self):
         args = parser.parse_args()
-        
+
         user = DAO.get_email(args['email'])
         if user:
             return abort(400, 'Email already registered with a user!')
