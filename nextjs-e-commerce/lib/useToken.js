@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function useToken() {
     function getToken() {
-        return localStorage.getItem("token");
+        let userToken; 
+
+        useEffect(() => {
+            userToken = localStorage.getItem("token") || "";
+        }, []);
+        return userToken
     }
 
     const [token, setToken] = useState(getToken());

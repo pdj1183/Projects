@@ -71,6 +71,7 @@
     color: #3b9eff;
     border-style: solid;
     border-width: 3px;
+    cursor: pointer;
 }
 
 .buttonSubmit:disabled:hover {
