@@ -4,7 +4,9 @@ from flask_restx import Api
 from datetime import datetime, timedelta, timezone
 import json
 from flask_restx.api import re
-import jwt
+from flask_jwt_extended import JWTManager, jwt_required, create_access_token, create_refresh_token, get_jwt, get_jwt_identity
+
+from api import profile
 
 
 def create_app(test_config=None):
@@ -27,24 +29,21 @@ def create_app(test_config=None):
     from . import db
     db.init_app(app)
 
+    jwt = JWTManager(app)
+
 
     api = Api(app)
-    from . import posts, auth
+    from . import posts, auth, profile
 
     app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=1)
     @app.after_request
     def refresh_expiring_jwts(response):
         try:
-            old = str(json.loads(response.data)['token'])
-            token = jwt.decode(old, auth.SECRET_KEY, algorithms=["HS256"])
-            print(token)
+            exp_timestamp = get_jwt()["exp"]
             now = datetime.now(timezone.utc)
             target_timestamp = datetime.timestamp(now + timedelta(minutes=30))
-            if target_timestamp > token['exp']:
-                access_token = jwt.encode({
-                    'user': token['username'],
-                    'expiration': str(datetime.utcnow() + timedelta(minutes=50))
-                    }, auth.SECRET_KEY)
+            if target_timestamp > exp_timestamp:
+                access_token = create_access_token(identity=get_jwt_identity())
                 data = response.get_json()
                 if type(data) is dict:
                     data["access_token"] = access_token 
@@ -57,5 +56,6 @@ def create_app(test_config=None):
     api.add_resource(posts.posts, '/api/posts')
     api.add_resource(auth.signup, '/api/signup')
     api.add_resource(auth.login, '/api/login')
+    # api.add_resource(profile.profile, '/api/profile')
 
     return app

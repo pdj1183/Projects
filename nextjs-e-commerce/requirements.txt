@@ -3,4 +3,4 @@ Flask==3.0.3
 setuptools==70.3.0
 flask-login
 flask-restx
-pyjwt
+flask-jwt-extended
