@@ -8,6 +8,7 @@ import Link from "next/link";
 export default function Login(props) {
     const router = useRouter();
 
+
     const [loginForm, setLoginForm] = useState({
         username: "",
         password: "",
@@ -37,6 +38,9 @@ export default function Login(props) {
             });
             console.log(res);
             if (res.ok) {
+                const json = await res.json();
+                props.setToken(json.token)
+                router.push("/")
             } else {
                 console.log("Bad");
             }
@@ -64,7 +68,7 @@ export default function Login(props) {
         <Layout>
             <section>
                 <Header {...headerImage} />
-                <form className={styles.form}>
+                <form className={styles.form} action="" method="POST">
                     <label className={styles.label}>Username:</label>
                     <input
                         className={styles.input}
@@ -95,7 +99,7 @@ export default function Login(props) {
                     </div>
                     <div className={styles.group}>
                         <input
-                            type="button"
+                            type="submit"
                             className={styles.buttonSubmit}
                             name="submit"
                             onClick={login}
