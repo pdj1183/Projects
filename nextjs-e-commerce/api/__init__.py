@@ -56,6 +56,6 @@ def create_app(test_config=None):
     api.add_resource(posts.posts, '/api/posts')
     api.add_resource(auth.signup, '/api/signup')
     api.add_resource(auth.login, '/api/login')
-    # api.add_resource(profile.profile, '/api/profile')
+    api.add_resource(profile.profile, '/api/profile')
 
     return app
