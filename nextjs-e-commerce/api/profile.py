@@ -13,7 +13,7 @@ class profile(Resource):
                 [get_jwt_identity()]
                 ).fetchone()
         resposnse_body = {
-                "name": data["username"],
+                "username": data["username"],
                 "email": data["email"],
                                 }
         return resposnse_body

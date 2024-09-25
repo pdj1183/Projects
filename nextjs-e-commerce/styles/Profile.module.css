@@ -1,0 +1,66 @@
+.profile {
+    min-height: calc(100vh - 70px);
+    width: 100%;
+    overflow-x: hidden;
+    background-image: radial-gradient(#97ccdc, #a4f3f8, #77a8ff, #9e3cff);
+    background-size: 600% 600%;
+    background-position: center;
+    animation: banner-animation 200s infinite alternate;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+@media(max-width: 1000px) {
+    .title {
+        font-size: 2rem !important;
+    }
+}
+
+.title {
+    font-size:4.5em;
+    align-self: center;
+
+    color: white;
+    z-index: 1;
+}
+
+@keyframes banner-animation {
+    0% {
+        background-position: top right;
+    }
+    25% {
+        background-position: bottom left;
+    }
+    50% {
+        background-position: top center;
+    }
+    75% {
+        background-position: center;
+    }
+    100% {
+        background-position: top right;
+    }
+}
+
+.infoBox {
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.16);
+
+    width: 60vw;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.info {
+    color: white;
+    align-self: center;
+    font-size: 1.5em;
+}
