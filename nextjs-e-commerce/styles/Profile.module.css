@@ -2,7 +2,7 @@
     min-height: calc(100vh - 70px);
     width: 100%;
     overflow-x: hidden;
-    background-image: radial-gradient(#97ccdc, #a4f3f8, #77a8ff, #9e3cff);
+    background-image: radial-gradient(#97ccdc, #a4f3f8, #77a8ff, #ffffff);
     background-size: 600% 600%;
     background-position: center;
     animation: banner-animation 200s infinite alternate;
@@ -23,6 +23,7 @@
 
     color: white;
     z-index: 1;
+    text-shadow: 0px 0px 2px rgba(184, 184, 184, 0.25);
 }
 
 @keyframes banner-animation {
@@ -51,7 +52,7 @@
 
     border: 2px solid white;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.16);
+    background-color: rgba(184, 184, 184, 0.25);
 
     width: 60vw;
 
