@@ -1,0 +1,37 @@
+#app {
+    margin: 0 auto;
+    font-weight: normal;
+    height: 100%;
+    width: 100%;
+}
+
+@keyframes banner-animation {
+    0% {
+        background-position: top right;
+    }
+    25% {
+        background-position: bottom left;
+    }
+    50% {
+        background-position: top center;
+    }
+    75% {
+        background-position: center;
+    }
+    100% {
+        background-position: top right;
+    }
+}
+
+html,
+body {
+    height: 99%;
+    margin: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-image: repeating-radial-gradient(#97dcd5, #b1dad7, #6c80fa 66.81%, #d4c4ff);
+
+    background-size: 800% 800%;
+    background-position: center;
+    animation: banner-animation 200s infinite alternate;
+}
