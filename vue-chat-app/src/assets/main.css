@@ -1,35 +1,35 @@
-@import './base.css';
-
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+    max-width: 1480px !important;
+    font-weight: normal;
+    height: 100%;
+    width: 100%;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+@keyframes banner-animation {
+    0% {
+        background-position: top right;
+    }
+    25% {
+        background-position: bottom left;
+    }
+    50% {
+        background-position: top center;
+    }
+    75% {
+        background-position: center;
+    }
+    100% {
+        background-position: top right;
+    }
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
+html,
+body {
+    height: 99%;
+    overflow-y: hidden;
+    background-image: repeating-radial-gradient(#97dcd5, #b1dad7, #6c80fa 66.81%, #d4c4ff);
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+    background-size: 800% 800%;
+    background-position: center;
+    animation: banner-animation 200s infinite alternate;
 }
