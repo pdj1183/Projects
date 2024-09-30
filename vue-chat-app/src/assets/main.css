@@ -1,5 +1,5 @@
 #app {
-    max-width: 1480px !important;
+    margin: 0 auto;
     font-weight: normal;
     height: 100%;
     width: 100%;
@@ -26,7 +26,9 @@
 html,
 body {
     height: 99%;
+    margin: 0;
     overflow-y: hidden;
+    overflow-x: hidden;
     background-image: repeating-radial-gradient(#97dcd5, #b1dad7, #6c80fa 66.81%, #d4c4ff);
 
     background-size: 800% 800%;

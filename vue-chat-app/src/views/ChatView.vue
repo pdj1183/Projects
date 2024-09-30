@@ -15,7 +15,9 @@ import ChatList from "../components/ChatList.vue";
 .window {
     display: grid;
     grid-template-columns: 2fr 8fr;
-    height: calc(100% - 4.2em);
+    height: calc(100% - 4.5em);
+    max-width: 1480px !important;
+    margin: 0 auto;
 }
 
 .section  {
