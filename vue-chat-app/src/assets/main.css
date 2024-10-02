@@ -30,7 +30,6 @@ body {
     overflow-y: hidden;
     overflow-x: hidden;
     background-image: repeating-radial-gradient(#97dcd5, #b1dad7, #6c80fa 66.81%, #d4c4ff);
-
     background-size: 800% 800%;
     background-position: center;
     animation: banner-animation 200s infinite alternate;
