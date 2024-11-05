@@ -1,0 +1,27 @@
+.contact {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 90%;
+    height: 50px;
+    text-indent: 15px;
+}
+
+.normal {
+    border: lightgrey 1px ;
+    border-style: none none solid;
+}
+
+.selected {
+    background-color: rgba(194, 70, 70, 0.82);
+    border-radius: 20px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px;
+    align-items: center;
+}
