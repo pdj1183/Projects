@@ -1,7 +1,9 @@
+from _typeshed import ExcInfo
 import argparse
 import collections
 import configparser
 from datetime import datetime
+from os.path import isdir
 import grp, pwd
 from fnmatch import fnmatch
 import hashlib
@@ -37,4 +39,51 @@ def main(argv=sys.argv[1:]):
 #        case "tag"          : cmd_tag(args)
         case _              : print("Bad command.")
 
+class GitRepository (object):
+
+    worktree = None
+    gitdir = None
+    conf = None
+
+    def init(self, path, force = False):
+        self.worktree = path
+        self.gitdir = os.path.join(path, ".git")
+
+        if not (force or os.path.isdir(self.gitdir)):
+            raise Exception("Not a Git repository %s" % path)
+
+        self.conf = configparser.ConfigParser()
+        cf = repo_file(self, "config")
+
+        if cf and os.path.exists(cf):
+            self.conf.read([cf])
+        elif not force:
+            raise Exception("Configuration file missing")
+
+        if not force:
+            vers = int(self.conf.get("core", "repositoryformatversion"))
+            if vers != 0:
+                raise Exception("Unsuported repositoryformatversion %s" % vers)
+
+def repo_path(repo, *path):
+    return os.path.join(repo.gitdir, *path)
+
+def repo_file(repo, *path, mkdir=False):
+    if repo_dir(repo, *path[:-1], mkdir = mkdir):
+        return repo_path(repo, *path)
+
+def repo_dir(repo, *path, mkdir=False):
+    path = repo_path(repo, *path)
+
+    if os.path.exists(path):
+        if os.path.isdir(path):
+            return path
+        else:
+            raise Exception("Not a directory %s" % path)
+
+    if mkdir:
+        os.makedirs(path)
+        return path
+    else:
+        return None
 
