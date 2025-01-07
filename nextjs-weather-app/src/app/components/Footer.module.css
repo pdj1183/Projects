@@ -1,0 +1,19 @@
+.footer {
+  grid-row-start: 3;
+  display: flex;
+  gap: 300px;
+  align-items: center; 
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+
+.social {
+    margin: 15px !important;
+    height: 50px;
+    width: 50px;
+}
