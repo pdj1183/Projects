@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "../components/navbar";
 
 export const metadata: Metadata = {
-  title: "Auctions and Bids",
+  title: "Auctions and Things",
   description: "Learn to recreate Cars and Bids",
 };
 
@@ -14,6 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body >
+        <Navbar />
         {children}
       </body>
     </html>
