@@ -21,7 +21,7 @@ async function reset() {
             model: "Stinger GT",
             year: "2018",
             description: "Blue Kia for sale for 12k.",
-            end: "2025-05-29 14:16:00",
+            end: "2025-01-16 12:00:00",
         });
     }
     console.log("Done!");

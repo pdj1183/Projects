@@ -1,0 +1,32 @@
+.center {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 40px;
+}
+@media (min-width: 1480px) {
+    .center {
+
+    margin: 0 auto;
+        max-width: 1440px;
+    }
+}
+
+.gallery {
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+@media (min-width: 600px) {
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 25px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
