@@ -3,12 +3,12 @@ import Image from "next/image";
 import kia from "../../../public/Kia-1.jpg";
 
 export default async function Page({ params }: { params: { id: string } }) {
-    const res = await fetch(`http://localhost:3000/api/auctions/${params.id}`);
+    const { id } = await params
+    const res = await fetch(`http://localhost:3000/api/auctions/${id}`);
     const post = await res.json();
 
     return (
         <div>
-            {" "}
             <Image
                 src={kia}
                 alt="Cover Image"
