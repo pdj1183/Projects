@@ -23,7 +23,7 @@ async function reset() {
             description: "Blue Kia for sale for 12k.",
             location: "Fort Collins, CO 80526",
             milage: "65,000 Miles",
-            converImage: "Kia-6.jpg",
+            coverImage: "Kia-6.jpg",
             end: "2025-01-16 12:00:00",
             reserve: false,
             status: "live",
