@@ -1,4 +1,3 @@
-const { type } = require("os");
 const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
@@ -29,9 +28,39 @@ module.exports = (sequelize) => {
             allowNull: false,
             type: DataTypes.STRING,
         },
+        location: {
+            allowNull: false,
+            type: DataTypes.STRING,
+        },
+        milage: {
+            allowNull: false,
+            type: DataTypes.STRING
+        },
+        coverImage:{
+            allowNull: false,
+            type: DataTypes.STRING,
+        },
         end: {
             allowNull: false,
-            type: DataTypes.DATE
-        }
+            type: DataTypes.DATE,
+        },
+        bid: {
+            allowNull: false,
+            type: DataTypes.INTEGER,
+            defaultValue: 0,
+            validate: {
+                min: 0,
+            },
+        },
+        reserve: {
+            allowNull: false,
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
+        },
+        status: {
+            allowNull: false,
+            type: DataTypes.STRING,
+            defaultValue: "live",
+        },
     });
 };

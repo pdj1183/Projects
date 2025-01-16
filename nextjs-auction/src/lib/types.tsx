@@ -4,7 +4,11 @@ export type auctionItem = {
     model: string;
     year: number;
     description: string;
+    location: string;
+    mileage: string;
     end: string;
+    reserve: boolean;
+    status: string;
 };
 
  export type timeRemaining = {
